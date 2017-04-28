@@ -1,0 +1,29 @@
+# Views (viewsdx.com) language's rollup plugin
+
+Include at the top of your `rollup.config.js`'s `plugins` list like:
+
+```
+import views from 'rollup-plugin-views'
+
+export default {
+  // ...
+  plugins: [
+    views({
+      root: './src' // optional, defaults to process.cwd(), tells the path prefix
+                    // from which to load your views
+    }),
+    // in particular, include this plugin before any other like babel or buble
+    // ...
+  ],
+  // ...
+}
+```
+
+See https://github.com/viewsdx/test-rollup for a sample app using this plugin.
+
+## Known limitations
+If you add a new file, you'll have to modify an existing one for rollup to recognise it.
+
+License BSD-Clause-3
+
+by UXtemple
